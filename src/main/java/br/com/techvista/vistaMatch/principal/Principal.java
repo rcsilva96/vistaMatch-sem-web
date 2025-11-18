@@ -1,5 +1,6 @@
 package br.com.techvista.vistaMatch.principal;
 
+import br.com.techvista.vistaMatch.model.DadosEpisodioModel;
 import br.com.techvista.vistaMatch.model.DadosSerieModel;
 import br.com.techvista.vistaMatch.model.DadosTemporadaModel;
 import br.com.techvista.vistaMatch.service.ConsumoAPI;
@@ -41,6 +42,16 @@ public class Principal {
         }
 
         temporadas.forEach(System.out::println);
+
+//        for (int i = 0; i <= dadosSerie.totalTemporadas(); i++) {
+//
+//            List<DadosEpisodioModel> episodiosTemporada = temporadas.get(i).episodios();
+//            for(int j = 0; j < episodiosTemporada.size(); j++) {
+//                System.out.println(episodiosTemporada.get(j).titulo());
+//            }
+//        }
+
+        temporadas.forEach(t -> t.episodios().forEach(e -> System.out.println(e.titulo())));
 
     }
 
